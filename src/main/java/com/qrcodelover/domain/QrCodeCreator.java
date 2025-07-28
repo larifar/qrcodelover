@@ -2,13 +2,15 @@ package com.qrcodelover.domain;
 
 import io.nayuki.qrcodegen.QrCode;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
 public class QrCodeCreator {
     public static BufferedImage generateQrcode(String barcodeText) throws Exception {
         QrCode qrCode = QrCode.encodeText(barcodeText, QrCode.Ecc.MEDIUM);
-        BufferedImage img = toImage(qrCode, 4, 10);
+        BufferedImage img = toImage(qrCode, 10, 2);
+
         return img;
     }
 
